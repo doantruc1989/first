@@ -7,6 +7,9 @@
     height: 1000px;
     color:white;
     position: relative;
+    max-width: 1440px;
+    margin: auto;
+    background-size: cover;
 }
 
 .layout1__nav {
@@ -32,6 +35,10 @@
     margin-right: 50px;
     justify-self: center;
     display: flex;
+    align-items: center;
+}
+.layout1__sodienthoai img {
+    margin-right: 7px;
 }
 
 .layout1__giua__chu {
@@ -92,9 +99,17 @@
     align-content: space-around;
 }
 
+.layout1__baohanh img {
+    margin-right: 7px;
+}
+
 .layout1__congsuat {
     display: flex;
     align-content: space-around;
+}
+
+.layout1__congsuat img {
+    margin-right: 7px;
 }
 
 .layout1__scrolldown {
@@ -117,11 +132,12 @@
 /* layout2 */
 .layout2 {
     font-family: 'Prompt';
-    max-width: auto;
+    max-width: 1440px;
     height: 600px;
     display: flex;
     justify-content: space-around;
-    margin-top: 70px;
+    margin: 70px auto;
+
 }
 
 .hinhmay2 {
@@ -162,6 +178,8 @@
     color: aliceblue;
     display: flex;
     justify-content: space-around;
+    max-width: 1440px;
+    margin: auto;
 }
 
 .phanchu3 {
@@ -188,11 +206,12 @@
 
 /* layout4 */
 .layout4 {
-    height: 800px;
-    margin-top: 150px;
+    height: 700px;
     display: flex;
     justify-content: space-around;
     color: blue;
+    max-width: 1440px;
+    margin: 250px auto;
 }
 
 .hinhanh4 {
@@ -232,17 +251,17 @@
     box-sizing: border-box;
 }
 
-.layout5{
+.layout5 {
+    background-image: url(image/layout5_should-wang-eGa8CozDfVc-unsplash\ 1.png);
+    max-width: 1440px;
+    height: 800px;
     position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
 }
 
-.layout5__hinhnen {
-    width: 95%;
-    height: 600px;
-    position: absolute;
-}
-
-.phanchu5 {
+.layout5__phanchu5 {
     width: 850px;
     color: aliceblue;
     font-size: 30px;
@@ -260,11 +279,12 @@
 
 /* layout6 */
 .layout6 {
-    height: 800px;
-    margin-top: 580px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    max-width: 1440px;
+    margin: auto;
 }
 .khachhang6 {
     color: blue;
@@ -318,6 +338,8 @@
     height: 700px;
     background-color: rgb(52, 52, 226);
     color: aliceblue;
+    max-width: 1440px;
+    margin: auto;
 }
 
 .nhanuudai {
