@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.js">
+</head>
+
+<body>
+    <div class="layout__nav">Máy tính thông minh</div>
+    <br>
+    <div class="mb-3">
+        <label class="form-label">Mời nhập tuổi của bạn:</label>
+        <br>
+        <input type="tuoi" class="form-control" id="exampleFormControlInput1" placeholder="Em chưa 18">
+    </div><br>
+    <button onclick="myFunction()" type="button" class="btn-success">Tính tuổi</button>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+
+        function myFunction() {
+            var tuoi = document.querySelector('#exampleFormControlInput1').value;
+            document.getElementById("demo").innerHTML = "Tuổi của bạn là: " + tuoi;
+            var tuoi2 = +tuoi.value;
+            if (tuoi2 >= 30) {
+                document.getElementById("demo2").innerHTML = "bạn già vl";
+            } else {
+                document.getElementById("demo2").innerHTML = "ngon";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

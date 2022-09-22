@@ -1,0 +1,65 @@
+* {
+width: 1440px;
+margin: auto;
+font-size: 20px;
+position: relative;
+}
+
+.layout__nav {
+color: red;
+width: 800px;
+font-weight: 800;
+text-align: center;
+margin-top: 50px;
+font-size: 40px;
+box-sizing: border-box;
+}
+
+.mb-3 {
+    width: 1000px;
+}
+
+.form-label {
+    color: blue;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.form-control {
+    width: 1000px;
+}
+
+.btn-success {
+    background-color: green;
+    width: auto;
+    border-radius: 8px;
+    border: 2px solid green;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    left: 680px;
+}
+
+#demo {
+    position: absolute;
+    margin-left: 220px;
+    color: rgb(24, 160, 53);
+    top: 220px;
+    border: 2px solid rgb(174, 238, 172);
+    background-color: rgba(174, 238, 172, 0.5);
+    width: 1000px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#demo2 {
+    position: absolute;
+    margin-left: 220px;
+    color: rgb(24, 160, 53);
+    top: 300px;
+    border: 2px solid rgb(174, 238, 172);
+    background-color: rgba(174, 238, 172, 0.5);
+    width: 1000px;
+    padding: 15px;
+    box-sizing: border-box;
+}
