@@ -13,11 +13,11 @@
     <script>
         function myFunction() {
             var y = prompt('chon 1 cai di ban', 'keo - bua - bao');
-            if (y == 'keo') {
+            if (y === 'keo') {
                 document.write('ban chon: keo' + '<br>');
-            } else if (y == 'bua') {
+            } else if (y === 'bua') {
                 document.write('ban chon: bua' + '<br>');
-            } else if (y == 'bao') {
+            } else if (y === 'bao') {
                 document.write('ban chon: bao' + '<br>')
             } else {
                 document.write('chon sai roi ban oi, chon lai di' + '<br>')
@@ -30,21 +30,21 @@
             var x = mayra[getRandom(3)];
             document.write('may ra: ' + x + '<br>');
 
-            if (x === 'keo' && y == 'keo') {
+            if (x === 'keo' && y === 'keo') {
                 document.write('hue tien');
-            } else if (x === 'keo' && y == 'bua') {
+            } else if (x === 'keo' && y === 'bua') {
                 document.write('chuc mung ban, thang roi');
-            } else if (x === 'keo' && y == 'bao') {
+            } else if (x === 'keo' && y === 'bao') {
                 document.write('thua cmnr');
-            } else if (x === 'bua' && y == 'keo') {
+            } else if (x === 'bua' && y === 'keo') {
                 document.write('thua cmnr');
-            } else if (x === 'bua' && y == 'bua') {
+            } else if (x === 'bua' && y === 'bua') {
                 document.write('hue tien');
-            } else if (x === 'bua' && y == 'bao') {
+            } else if (x === 'bua' && y === 'bao') {
                 document.write('chuc mung ban, thang roi');
-            } else if (x === 'bao' && y == 'keo') {
+            } else if (x === 'bao' && y === 'keo') {
                 document.write('chuc mung ban, thang roi');
-            } else if (x === 'bao' && y == 'bua') {
+            } else if (x === 'bao' && y === 'bua') {
                 document.write('thua cmnr');
             } else {
                 document.write('hue tien');
