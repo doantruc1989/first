@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="choi_game_ko_em" onclick="myFunction()" id="ccc">
+    <script>
+        function myFunction() {
+            var y = prompt('chon 1 cai di ban', 'keo - bua - bao');
+            if (y == 'keo') {
+                document.write('ban chon: keo' + '<br>');
+            } else if (y == 'bua') {
+                document.write('ban chon: bua' + '<br>');
+            } else if (y == 'bao') {
+                document.write('ban chon: bao' + '<br>')
+            } else {
+                document.write('chon sai roi ban oi, chon lai di' + '<br>')
+            }
+
+            var mayra = ['keo', 'bua', 'bao'];
+            function getRandom(max) {
+                return Math.floor(Math.random() * max);
+            }
+            var x = mayra[getRandom(3)];
+            document.write('may ra: ' + x + '<br>');
+
+            if (x === 'keo' && y == 'keo') {
+                document.write('hue tien');
+            } else if (x === 'keo' && y == 'bua') {
+                document.write('chuc mung ban, thang roi');
+            } else if (x === 'keo' && y == 'bao') {
+                document.write('thua cmnr');
+            } else if (x === 'bua' && y == 'keo') {
+                document.write('thua cmnr');
+            } else if (x === 'bua' && y == 'bua') {
+                document.write('hue tien');
+            } else if (x === 'bua' && y == 'bao') {
+                document.write('chuc mung ban, thang roi');
+            } else if (x === 'bao' && y == 'keo') {
+                document.write('chuc mung ban, thang roi');
+            } else if (x === 'bao' && y == 'bua') {
+                document.write('thua cmnr');
+            } else {
+                document.write('hue tien');
+            }
+        }
+    </script>
+</body>
+
+</html>
