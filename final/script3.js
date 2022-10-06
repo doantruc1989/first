@@ -5,7 +5,7 @@ var requestOptions = {
     headers: headers,
     redirect: 'follow'
 };
-var url = "https://api.countrystatecity.in/v1/countries";
+const url = "https://api.countrystatecity.in/v1/countries";
 let countries = document.getElementById('country');
 let states = document.getElementById('state');
 let cities = document.getElementById('city');
@@ -21,13 +21,13 @@ async function getCountries() {
 getCountries();
 
 countries.addEventListener('change', function () {
-    var selectedCountry = this.value;
+    var selectedCountry = countries.value;
     getStates(selectedCountry);
+    clearStateCity();
 })
 
 async function getStates(selectedCountry) {
     var url2 = `${url}/${selectedCountry}/states/`;
-    console.log(url2);
     const response = await fetch(url2, requestOptions);
     const dataState = await response.json();
     for (let i = 0; i < dataState.length; i++) {
@@ -36,37 +36,88 @@ async function getStates(selectedCountry) {
 }
 
 states.addEventListener('change', function () {
-    var selectedState = this.value;
+    var selectedState = states.value;
     var selectedCountry = countries.value;
     getCities(selectedState, selectedCountry);
+    clearCity();
 })
 
 async function getCities(selectedState, selectedCountry) {
     var url3 = `${url}/${selectedCountry}/states/${selectedState}/cities`;
-    console.log(url3);
     const response = await fetch(url3, requestOptions);
     const dataCity = await response.json();
     console.log(dataCity);
-    for (let i = 0; i< dataCity.length; i++) {
-        cities.innerHTML += `<option>${dataCity[i].name}</option>`
+    for (let i = 0; i < dataCity.length; i++) {
+        cities.innerHTML += `<option value="${dataCity[i].name}">${dataCity[i].name}</option>`
     }
 }
 
-function clearCountry() {
-    url = "https://api.countrystatecity.in/v1/countries";
-    getCountries();
+function clearStateCity() {
+    states.value = "";
+    states.innerHTML = `<option value="">--- Select State---</option>`;
+    cities.value = "";
+    cities.innerHTML = `<option value="">--- Select City---</option>`;
 }
 
-function clearState() {
-    var selectedCountry = countries.value;
-    var url2 = `${url}/${selectedCountry}/states/`;
-    getStates(selectedCountry);
+function clearCity() {
+    cities.value = "";
+    cities.innerHTML = `<option value="">--- Select City---</option>`;
 }
 
 function clearAll() {
-    clearCountry();
-    clearState();
-    var selectedCountry = countries.value;
-    var selectedState = states.value;
-    getCities(selectedState, selectedCountry);
+    countries.value = "";
+    states.value = "";
+    states.innerHTML = `<option value="">--- Select State---</option>`;
+    cities.value = "";
+    cities.innerHTML = `<option value="">--- Select City---</option>`;
+}
+
+function saveData() {
+    var selectedCountry = [countries.value, states.value, cities.value];
+    localStorage.setItem("saved", selectedCountry);
+}
+
+function loadData() {
+    var getItem = localStorage.getItem("saved");
+    console.log(getItem);
+    
+    // var arr = getItem.split(",");
+    const [savedCountry, savedState, savedCity ] = getItem.split(',');
+
+    
+    countries.value = savedCountry;
+    getStates(savedCountry).then(() => {
+        states.value = savedState;
+    });
+
+    getCities(savedState,savedCountry).then(() =>{
+        cities.value = savedCity;
+    })
+
+    // if (countries.value == arr[0]) {
+    //     // async function getState2() {
+    //     //     var url2 = `${url}/${arr[0]}/states/`;
+    //     //     const response = await fetch(url2, requestOptions);
+    //     //     const dataState = await response.json();
+    //     //     for (let i = 0; i < dataState.length; i++) {
+    //     //         states.innerHTML += `<option value="${dataState[i].iso2}">${dataState[i].name}</option>`;
+    //     //         states.value = arr[1];
+    //     //     }
+    //     // }
+    //     // getState2();
+
+    // }
+
+    // if (states.value == arr[1]) {
+    //     async function getCities2() {
+    //         var url3 = `${url}/${arr[0]}/states/${arr[1]}/cities`;
+    //         const response = await fetch(url3, requestOptions);
+    //         const dataCity = await response.json();
+    //         for (let i = 0; i < dataCity.length; i++) {
+    //             cities.innerHTML += `<option value="${dataCity[i].name}">${dataCity[i].name}</option>`
+    //             cities.value = arr[2];
+    //         }
+    //     }
+    //     getCities2();
+    // }
 }

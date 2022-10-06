@@ -11,17 +11,21 @@
 <body>
     <div>
         <select id="country">
-            <option>--- Select Country---</option>
-        </select><button onclick="clearCountry()">Clear</button><br>
+            <option value="">--- Select Country---</option>
+        </select><br>
         <select id="state">
-            <option>--- Select State---</option>
-        </select><button onclick="clearState()">Clear</button><br>
+            <option value="">--- Select State---</option>
+        </select><br>
         <select id="city">
-            <option>--- Select City---</option>
-        </select><button onclick="clearAll()">Clear All</button>
+            <option value="">--- Select City---</option>
+        </select><button onclick="clearAll()">Clear All</button><br>
+        <button onclick="saveData()">Save</button>
+        <button onclick="loadData()">Load</button>
     </div>
     <div id="beta"></div>
-    <script src="script3.js"></script>
+    <script src="https://releases.jquery.com/git/jquery-3.x-git.slim.js"></script>
+    <script src="script4.js"></script>
+
 </body>
 
 </html>
